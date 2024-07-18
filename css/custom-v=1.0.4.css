@@ -364,6 +364,17 @@ div#events-link .section-title {
    color: var(--xc2);
 }
 
+.ca-program-img {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.ca-program-img img {
+   border-radius: 8px;
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 40);
+}
+
 
 /* end footer */
 @media only screen and (max-width: 768px) {
