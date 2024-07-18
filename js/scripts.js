@@ -195,7 +195,7 @@
   if ($(".events-slider-images")[0]) {
     events_slider_images.controller.control = event_slider_content;
     event_slider_content.controller.control = events_slider_images;
-  } else {}
+  } else { }
 
   // DATA BACKGROUND IMAGE
   var pageSection = $("*");
@@ -239,22 +239,21 @@
   scroll.on('scroll', (instance) => {
     // let headerHeight = header.getBoundingClientRect().height;
     // if (instance.direction === 'down' && static) {
-    console.log(instance.scroll.y)
-      if (instance.scroll.y > 200) {
-        header.classList.add('pinned');
-        if (header.classList.contains('navbar')) {
-          header.classList.remove('light');
-          header.classList.add('dark');
-        }
-       }else{
+    if (instance.scroll.y > 200) {
+      header.classList.add('pinned');
+      if (header.classList.contains('navbar')) {
+        header.classList.remove('light');
+        header.classList.add('dark');
+      }
+    } else {
 
-         header.classList.remove('pinned');
-        if (header.classList.contains('navbar')) {
-          header.classList.remove('dark');
-          header.classList.add('light');
-        }
+      header.classList.remove('pinned');
+      if (header.classList.contains('navbar')) {
+        header.classList.remove('dark');
+        header.classList.add('light');
+      }
 
-       }
+    }
     // }
     // if (instance.direction === 'up' && !static) {
     //   if (instance.scroll.y <= headerHeight) {
