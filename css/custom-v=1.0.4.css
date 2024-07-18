@@ -365,14 +365,18 @@ div#events-link .section-title {
 }
 
 .ca-program-img {
+   width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
+   gap: 2rem;
+
 }
 
 .ca-program-img img {
    border-radius: 8px;
    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 40);
+   width: 50%;
 }
 
 
@@ -384,6 +388,14 @@ div#events-link .section-title {
 
    .hide-desk {
       display: flex;
+   }
+
+   .ca-program-img {
+      flex-direction: column;
+   }
+
+   .ca-program-img img {
+      width: 100%;
    }
 }
 
