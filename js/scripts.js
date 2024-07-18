@@ -267,7 +267,7 @@
     // }
     // if (instance.direction === 'down' && !hidden) {
     //   if (instance.scroll.y > (headerHeight / 2)) {
-    //     //console.log('hidden');
+    //    // console.log('hidden');
     //     header.classList.remove('pinned');
     //     header.classList.add('unpinned');
     //     hidden = true;

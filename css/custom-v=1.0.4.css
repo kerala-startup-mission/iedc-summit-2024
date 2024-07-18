@@ -351,6 +351,17 @@ div#events-link .section-title {
    display: flex;
    align-items: center;
    justify-content: center;
+   gap: 2rem;
+}
+
+.ca-guidelines {
+   margin: 1rem 0;
+   text-align: center;
+}
+
+.ca-guidelines a {
+   text-decoration: underline;
+   color: var(--xc2);
 }
 
 
