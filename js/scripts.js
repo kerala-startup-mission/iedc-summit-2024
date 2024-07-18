@@ -3,6 +3,46 @@
     "use strict";
 
 
+    //NOTIFICATION POP UP
+    let popupShown = false;
+
+    function showPopup() {
+        if (!popupShown) {
+            iziToast.show({
+                title: 'Attention!!',
+                message: 'Calling all campus ambassadors!! Show more..',
+                position: 'bottomRight',
+                timeout: 5000, // Duration in milliseconds (3 seconds)
+                progressBar: true, // Enable progress bar
+                progressBarColor: '#0a7ed8', // Progress bar color
+                backgroundColor: '#FFD700', // Background color of the popup
+                transitionIn: 'bounceInUp', // Slide in from the right
+                transitionOut: 'fadeOutDown', // Slide out to the right
+                closeOnClick: true,
+                onClosed: function() {
+                    popupShown = false; // Allow the popup to show again if needed
+                },
+                onOpening: function(instance, toast) {
+                    // Adding the click event listener directly to the toast element
+                    toast.addEventListener('click', function() {
+                        document.getElementById('campus-ambassador').scrollIntoView({ behavior: 'smooth' });
+                    });
+                }
+            });
+
+            popupShown = true;
+        }
+    }
+
+    let scrollCount = 0;
+    window.addEventListener("scroll", function() {
+        if (!popupShown && scrollCount === 0) {
+            showPopup();
+            scrollCount++;
+        }
+    });
+
+
     // MASONRY
     $('.events-grid').isotope({
       itemSelector: '.events-grid .grid-item',
