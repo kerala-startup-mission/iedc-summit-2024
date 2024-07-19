@@ -4,42 +4,73 @@
 
 
     //NOTIFICATION POP UP
-    let popupShown = false;
+    let caPopupShown = false;
+    let degree360PopupShown = false;
+
+    function showDegree360Popup() {
+      if (!degree360PopupShown) {
+        iziToast.show({
+          title: 'Attention!!',
+          message: 'Degree 360 is now live!! Show more..',
+          position: 'bottomRight',
+          timeout: 5000, // Duration in milliseconds (3 seconds)
+          progressBar: true, // Enable progress bar
+          progressBarColor: '#0a7ed8', // Progress bar color
+          backgroundColor: '#FFD700', // Background color of the popup
+          transitionIn: 'bounceInUp', // Slide in from the right
+          transitionOut: 'fadeOutDown', // Slide out to the right
+          closeOnClick: true,
+          onClosed: function () {
+            degree360PopupShown = false; // Allow the popup to show again if needed
+          },
+          onOpening: function (instance, toast) {
+            // Adding the click event listener directly to the toast element
+            toast.addEventListener('click', function () {
+              document.getElementById('360-degree').scrollIntoView({ behavior: 'smooth' });
+            });
+          }
+        });
+
+        degree360PopupShown = true;
+      }
+    }
+
 
     function showPopup() {
-        if (!popupShown) {
-            iziToast.show({
-                title: 'Attention!!',
-                message: 'Calling all campus ambassadors!! Show more..',
-                position: 'bottomRight',
-                timeout: 5000, // Duration in milliseconds (3 seconds)
-                progressBar: true, // Enable progress bar
-                progressBarColor: '#0a7ed8', // Progress bar color
-                backgroundColor: '#FFD700', // Background color of the popup
-                transitionIn: 'bounceInUp', // Slide in from the right
-                transitionOut: 'fadeOutDown', // Slide out to the right
-                closeOnClick: true,
-                onClosed: function() {
-                    popupShown = false; // Allow the popup to show again if needed
-                },
-                onOpening: function(instance, toast) {
-                    // Adding the click event listener directly to the toast element
-                    toast.addEventListener('click', function() {
-                        document.getElementById('campus-ambassador').scrollIntoView({ behavior: 'smooth' });
-                    });
-                }
+      if (!caPopupShown) {
+        iziToast.show({
+          title: 'Attention!!',
+          message: 'Calling all campus ambassadors!! Show more..',
+          position: 'bottomRight',
+          timeout: 5000, // Duration in milliseconds (3 seconds)
+          progressBar: true, // Enable progress bar
+          progressBarColor: '#0a7ed8', // Progress bar color
+          backgroundColor: '#FFD700', // Background color of the popup
+          transitionIn: 'bounceInUp', // Slide in from the right
+          transitionOut: 'fadeOutDown', // Slide out to the right
+          closeOnClick: true,
+          onClosed: function () {
+            caPopupShown = false; // Allow the popup to show again if needed
+          },
+          onOpening: function (instance, toast) {
+            // Adding the click event listener directly to the toast element
+            toast.addEventListener('click', function () {
+              document.getElementById('campus-ambassador').scrollIntoView({ behavior: 'smooth' });
             });
+          }
+        });
 
-            popupShown = true;
-        }
+        caPopupShown = true;
+      }
     }
 
     let scrollCount = 0;
-    window.addEventListener("scroll", function() {
-        if (!popupShown && scrollCount === 0) {
-            showPopup();
-            scrollCount++;
-        }
+    window.addEventListener("scroll", function () {
+      if (!caPopupShown && !degree360PopupShown && scrollCount === 0) {
+        showPopup();
+        showDegree360Popup();
+        scrollCount++;
+      }
     });
 
 
