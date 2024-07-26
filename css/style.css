@@ -4401,3 +4401,17 @@ only screen and (max-device-width: 767px) {
     width: 100%;
   }
 }
+
+.show-mobile  {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .hide-mobile {
+    display: none;
+  }
+  .show-mobile {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
