@@ -482,6 +482,7 @@ body.page-loaded .preloader svg path {
   z-index: 19;
   transition: all 1s cubic-bezier(0.85, 0, 0.076, 1);
   transition-delay: 0.3s;
+  z-index: 1000000;
 }
 
 .preloader svg {
