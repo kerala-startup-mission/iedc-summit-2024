@@ -2155,6 +2155,58 @@ body.page-loaded .preloader svg path {
   opacity: 1;
 }
 
+.logos {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.logos img {
+  width: 100px;
+  height: auto;
+}
+
+/*Counters */
+
+.counters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 100px;
+}
+
+.counters .counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 300px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin: 20px;
+
+}
+
+.counters .counter span {
+  display: block;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.counters .counter h3 {
+  font-size: 1.3rem;
+  color: rgb(10, 126, 215);
+}
+
+.counters .counter p {
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
 /* COUNTER BOX */
 .col-lg-4:nth-child(1) .counter-box {
   margin-top: 50px;
