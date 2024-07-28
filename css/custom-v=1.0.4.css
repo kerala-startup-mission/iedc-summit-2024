@@ -439,5 +439,26 @@ div#events-link .section-title {
    padding: 10px;
    text-align: center;
    margin: 20px;
+}
 
+.counters .counter span {
+   display: block;
+   font-size: 50px;
+   font-weight: 600;
+}
+
+.counters .counter h3 {
+   font-size: 1.3rem;
+   color: rgb(10, 126, 215);
+}
+
+.counters .counter p {
+   font-size: 1rem;
+   margin-top: 20px;
+}
+
+@media (width < 700px) {
+   .counters {
+      margin: 0;
+   }
 }
