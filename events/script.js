@@ -1,22 +1,67 @@
 
-const appendData = (container, data, emptyMessage) => {
+const appendData = (container, data, emptyMessage, type = "event") => {
     if (data.length) {
         data.forEach(item => {
             const card = document.createElement('div');
             card.classList.add('card');
 
-            card.innerHTML = `
-            <div class="poster">
-                <img src="${item.imageUrl}" alt="${item.title}">
-            </div>
-            <div class="details">
-                <h1>${item.title}</h1>
-                <p>${item.speaker}</p>
-                <div class="time">${item.date} &nbsp; <span>|</span> &nbsp; ${item.time}</div>
-                <button>Register</button>
-                <img src="images/barcode.png" class="barcode" alt="Barcode">
-            </div>
-        `;
+
+            if (type == "event") {
+                card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.posterImage}" alt="">
+                </div>
+                <div class="details">
+                    <h1>${item.eventName}</h1>
+                    <div class="time">Price: ${item.price} &nbsp; <span>|</span> &nbsp; Venue: ${item.venue}</div>
+                    <div class="buttons">
+                        <button> 
+                            <a target="_blank" href="${item.linkToReg}"> Register </a>
+                        </button>
+                        <button>
+                            <a target="_blank" href="${item.linkToGuidelines}"> View Guidelines </a>
+                        </button>
+                    </div>
+                </div>
+                `;
+            }
+            else if (type == "lecture") {
+                card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.posterImage}" alt="">
+                </div>
+                <div class="details">
+                    <h1>${item.eventName}</h1>
+                    <p> Speaker: ${item.speakerName} </p>
+                    <div class="time">Price: ${item.price} &nbsp; <span>|</span> &nbsp; Venue: ${item.venue}</div>
+                    <div class="buttons">
+                        <button> 
+                            <a target="_blank" href="${item.linkToReg}"> Register </a>
+                        </button>
+                    </div>
+                </div>
+                `;
+            }
+            else {
+                card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.posterImage}" alt="">
+                </div>
+                <div class="details">
+                    <h1>${item.eventName}</h1>
+                    <p> Conducted By: ${item.speakerName} </p>
+                    <div class="time">Price: ${item.price} &nbsp; <span>|</span> &nbsp; Venue: ${item.venue}</div>
+                    <div class="buttons">
+                        <button> 
+                            <a target="_blank" href="${item.linkToReg}"> Register </a>
+                        </button>
+                        <button>
+                            <a target="_blank" href="${item.linkToGuidelines}"> View Guidelines </a>
+                        </button
+                    </div>
+                </div>
+                `
+            }
 
             container.appendChild(card);
         });
@@ -31,6 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const eventCardsContainer = document.querySelector('#card-container .event-cards');
     const lectureCardsContainer = document.querySelector('#card-container .lecture-cards');
     const workshopsCardsContainer = document.querySelector('#card-container .workshop-cards');
+
+    fetch("https://iedc-summit-backend.vercel.app/api/get-data")
+        .then(res => res.json())
+        .then(({ events, lectures, workshops }) => {
+            console.log(events, lectures, workshops);
+            appendData(eventCardsContainer, events, "No events available", "event")
+            appendData(lectureCardsContainer, lectures, "No Lecutres available", "lecture");
+            appendData(workshopsCardsContainer, workshops, "No Workshops available", "workshop");
+        });
+
     const data = [
         {
             title: "Drone Technology",
@@ -62,8 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
 
-    appendData(eventCardsContainer, data);
-    appendData(lectureCardsContainer, []);
-    appendData(workshopsCardsContainer, []);
+    // appendData(eventCardsContainer, data);
+    // appendData(lectureCardsContainer, []);
+    // appendData(workshopsCardsContainer, []);
 
 });
