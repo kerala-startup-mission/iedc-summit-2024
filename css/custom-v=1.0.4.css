@@ -407,3 +407,37 @@ div#events-link .section-title {
       background-position: bottom;
    }
 }
+
+.logos {
+   display: flex;
+   justify-content: space-around;
+   margin: 30px;
+}
+
+.logos img {
+   width: 100px;
+   height: auto;
+}
+
+.counters {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   margin: 0 100px;
+}
+
+.counters .counter {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 250px;
+   height: 300px;
+   border: 1px solid rgb(221, 221, 221);
+   border-radius: 10px;
+   padding: 10px;
+   text-align: center;
+   margin: 20px;
+
+}
