@@ -74,14 +74,14 @@
     });
 
 
-    // MASONRY
-    $('.events-grid').isotope({
-      itemSelector: '.events-grid .grid-item',
-      percentPosition: true,
-      masonry: {
-        columnWidth: '.grid-item'
-      }
-    });
+    // // MASONRY
+    // $('.events-grid').isotope({
+    //   itemSelector: '.events-grid .grid-item',
+    //   percentPosition: true,
+    //   masonry: {
+    //     columnWidth: '.grid-item'
+    //   }
+    // });
 
 
     // PRELOADER
