@@ -105,6 +105,11 @@
       $(".mobile-menu").toggleClass("active")
     })
 
+    $('.site-menu ul li a').on('click', function () {
+      $(".menu .line").toggleClass('opened');
+      $(".mobile-menu").toggleClass("active")
+    })
+
     /* SIDE WIDGET */
     $('.more-button').on('click', function () {
       $(".side-widget").toggleClass("active")

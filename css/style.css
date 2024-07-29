@@ -113,6 +113,11 @@ theme.
   outline: none !important;
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -126,6 +131,8 @@ body {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   overflow-x: hidden;
+
+  width: 100vw;
 }
 
 /* HTML ELEMENTS */
@@ -455,6 +462,12 @@ div.is-inview {
 }
 
 /* PRELOADER */
+
+.preloader {
+  width: 100vw;
+}
+
+
 body.page-loaded .preloader {
   left: 100%;
 }
