@@ -3,8 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/iedcSummit.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iedcsummit.in/">
+    <meta property="og:title" content="IEDC summit 2024 | Kerala Startup Mission">
+    <meta property="og:description"
+        content="Kerala Startup Mission is organizing the seventh edition of the flagship event IEDC Summit 2024, bringing together Student Innovators and all other connected stakeholders under one umbrella.">
+    <meta property="og:image" content="/fb_image.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://iedcsummit.in/">
+    <meta property="twitter:title" content="IEDC summit 2024 | Kerala Startup Mission">
+    <meta property="twitter:description"
+        content="Kerala Startup Mission is organizing the seventh edition of the flagship event IEDC Summit 2024, bringing together Student Innovators and all other connected stakeholders under one umbrella.">
+    <meta property="twitter:image" content="/fb_image.jpeg">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png">
+    <link rel="manifest" href="/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Events</title>
 
     <link rel="stylesheet" href="/css/fontawesome.min.css">
     <link rel="stylesheet" href="/css/swiper.min.css">
@@ -26,7 +63,25 @@
 </head>
 
 <body>
-    <div class="page-loaded">
+    <div class="preloader">
+        <div class="inner">
+            <figure><img src="/images/logo-tilt.png" alt="Image"></figure>
+            <div class="percentage" id="percentage">0</div>
+        </div>
+        <!-- end inner -->
+        <div class="loader-progress" id="loader-progress"> </div>
+        <!-- end loader-progress -->
+        <svg viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1" class="loading-whoosh">
+            <path d="M-4.5,1080H1920V0H0c-10.2,134.8,0.1,311.5,0,541C-0.1,769.5,0,948-4.5,1080z"></path>
+        </svg>
+    </div>
+    <!-- end preloader -->
+    <div class="page-transition">
+        <svg viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1">
+            <path d="M540,1080H0V0h540c-40.28,124.78-85.13,311.48-85,541C455.13,769.53,499.81,955.48,540,1080z"></path>
+        </svg>
+    </div>
+    <div>
         <div class="smooth-scroll">
             <aside class="mobile-menu">
                 <svg viewBox="0 0 600 1080" preserveAspectRatio="none" version="1.1">
@@ -251,6 +306,14 @@
         </footer>
         <!-- end footer -->
     </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/fancybox.min.js"></script>
+    <script src="/js/isotope.min.js"></script>
+    <script src="/js/gsap.min.js"></script>
+    <script src="/js/locomotive-scroll.min.js"></script>
+    <script src="/js/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 
