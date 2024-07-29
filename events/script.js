@@ -124,6 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// PRELOADER
+var counting = setInterval(function () {
+    var loader = document.getElementById("percentage");
+    var currval = parseInt(loader.innerHTML);
+    var Width = 99 - currval;
+    var loadscreen = document.getElementById("loader-progress");
+    loader.innerHTML = ++currval;
+    if (currval === 100) {
+        clearInterval(counting);
+        $("body").toggleClass('page-loaded');
+    }
+    loadscreen.style.transition = "0.1s";
+    loadscreen.style.width = Width + "%";
+}, 10);
+
+
 
 
 // SEARCH BOX
