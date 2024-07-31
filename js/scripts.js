@@ -105,7 +105,7 @@
       $(".mobile-menu").toggleClass("active")
     })
 
-    $('.site-menu ul li a').on('click', function () {
+    $('.mobile-menu .site-menu ul li a').on('click', function () {
       $(".menu .line").toggleClass('opened');
       $(".mobile-menu").toggleClass("active")
     })

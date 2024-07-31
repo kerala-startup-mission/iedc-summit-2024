@@ -415,8 +415,8 @@ div#events-link .section-title {
 }
 
 .logos img {
-   width: 100px;
-   height: auto;
+   height: 100px;
+   object-fit: cover;
 }
 
 .counters {
