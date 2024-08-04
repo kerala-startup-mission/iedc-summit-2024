@@ -54,18 +54,16 @@ body {
 }
 
 .details p {
-    /* margin: 10px 0; */
     margin-left: 2px;
 }
 
 .time {
-    line-height: 70px;
     display: flex;
     align-items: center;
     margin-left: 5px;
 }
 
-.time span {
+.time .divider {
     font-size: 2em;
     font-weight: 100;
 }
@@ -82,6 +80,16 @@ body {
 
 .details button a {
     color: white;
+}
+
+.details .content {}
+
+.details .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
 }
 
 .barcode {
@@ -116,4 +124,26 @@ body {
 
 .navbar {
     background-color: #3A3089;
+}
+
+@media (width < 500px) {
+    .details .buttons {
+        flex-direction: column;
+    }
+
+    .details button {
+        width: 100%;
+    }
+
+    .time {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        align-items: start;
+    }
+
+    .time .divider {
+        display: none;
+    }
 }

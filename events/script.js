@@ -13,8 +13,14 @@ const appendData = (container, data, emptyMessage, type = "event") => {
                     <img src="${item.posterImage}" alt="">
                 </div>
                 <div class="details">
-                    <h1>${item.eventName}</h1>
-                    <div class="time">Price: ${item.price} &nbsp; <span>|</span> &nbsp; Venue: ${item.venue}</div>
+                    <div class="content">
+                        <h1>${item.eventName}</h1>
+                        <div class="time">
+                            <span>Price: ${item.price}&nbsp;</span>
+                            <span class="divider">|&nbsp;</span>
+                            <span>Venue: ${item.venue}</span>
+                        </div>
+                    </div>
                     <div class="buttons">
                         <button> 
                             <a target="_blank" href="${item.linkToReg}"> Register </a>
