@@ -11,13 +11,13 @@
     function showPopup() {
       if (!popupShown) {
         iziToast.show({
-          title: 'Attention!!',
-          message: 'Checkout our events page!',
+          title: 'Alert!!',
+          message: 'IEDC Summit has been postponed until further notice',
           position: 'bottomRight',
           timeout: 5000, // Duration in milliseconds (3 seconds)
           progressBar: true, // Enable progress bar
           progressBarColor: '#0a7ed8', // Progress bar color
-          backgroundColor: '#FFD700', // Background color of the popup
+          backgroundColor: '#ffffff', // Background color of the popup
           transitionIn: 'bounceInUp', // Slide in from the right
           transitionOut: 'fadeOutDown', // Slide out to the right
           closeOnClick: true,
