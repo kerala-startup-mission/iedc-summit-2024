@@ -10,7 +10,7 @@ const appendData = (container, data, emptyMessage, type = "event") => {
             if (type == "event") {
                 card.innerHTML = `
                 <div class="poster">
-                    <img src="${item.posterImage}" alt="">
+                    <img src="${item.imgUrl}" alt="">
                 </div>
                 <div class="details">
                     <div class="content">
@@ -35,7 +35,7 @@ const appendData = (container, data, emptyMessage, type = "event") => {
             else if (type == "lecture") {
                 card.innerHTML = `
                 <div class="poster">
-                    <img src="${item.posterImage}" alt="">
+                    <img src="${item.imgUrl}" alt="">
                 </div>
                 <div class="details">
                     <h1>${item.eventName}</h1>
@@ -52,7 +52,7 @@ const appendData = (container, data, emptyMessage, type = "event") => {
             else {
                 card.innerHTML = `
                 <div class="poster">
-                    <img src="${item.posterImage}" alt="">
+                    <img src="${item.imgUrl}" alt="">
                 </div>
                 <div class="details">
                     <h1>${item.eventName}</h1>
