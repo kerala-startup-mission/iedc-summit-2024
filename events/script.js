@@ -84,50 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const lectureCardsContainer = document.querySelector('#card-container .lecture-cards');
     const workshopsCardsContainer = document.querySelector('#card-container .workshop-cards');
 
-    fetch("https://iedc-summit-backend.vercel.app/api/get-data")
+    fetch("https://iedc-summit-backend.vercel.app/getEvents")
         .then(res => res.json())
-        .then(({ events, lectures, workshops }) => {
-            console.log(events, lectures, workshops);
+        .then(events =>
             appendData(eventCardsContainer, events, "No events available", "event")
-            appendData(lectureCardsContainer, lectures, "No Lecutres available", "lecture");
-            appendData(workshopsCardsContainer, workshops, "No Workshops available", "workshop");
-        });
+        );
 
-    const data = [
-        {
-            title: "Drone Technology",
-            speaker: "Tony Stark",
-            date: "24th Aug",
-            time: "1pm",
-            imageUrl: "images/workshop2.jpg"
-        },
-        {
-            title: "Robotics",
-            speaker: "Bruce Wayne",
-            date: "27.07",
-            time: "2pm",
-            imageUrl: "images/workshop3.jpg"
-        }, {
-            title: "Industry 4.0",
-            speaker: "Tony Stark",
-            date: "26.07",
-            time: "1pm",
-            imageUrl: "images/workshop2.jpg"
-        }, {
-            title: "Al & Machine Learning",
-            speaker: "Tony Stark",
-            date: "26.07",
-            time: "1pm",
-            imageUrl: "images/workshop2.jpg"
-        },
-        // Add more items as needed
-    ];
+    fetch("https://iedc-summit-backend.vercel.app/getLectures")
+        .then(res => res.json())
+        .then(lectures =>
+            appendData(lectureCardsContainer, lectures, "No Lecutres available", "lecture")
+        );
 
-
-    // appendData(eventCardsContainer, data);
-    // appendData(lectureCardsContainer, []);
-    // appendData(workshopsCardsContainer, []);
-
+    fetch("https://iedc-summit-backend.vercel.app/getWorkshops")
+        .then(res => res.json())
+        .then(workshops =>
+            appendData(workshopsCardsContainer, workshops, "No Workshops available", "workshop")
+        )
 });
 
 // PRELOADER
