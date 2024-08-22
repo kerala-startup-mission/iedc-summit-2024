@@ -26,6 +26,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    width: 360px;
 }
 
 .poster {
@@ -50,7 +51,6 @@ body {
 
 .details h1 {
     font-size: 1.5em;
-    width: 200px;
 }
 
 .details p {

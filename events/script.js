@@ -62,9 +62,7 @@ const appendData = (container, data, emptyMessage, type = "event") => {
                         <button> 
                             <a target="_blank" href="${item.linkToReg}"> Register </a>
                         </button>
-                        <button>
-                            <a target="_blank" href="${item.linkToGuidelines}"> View Guidelines </a>
-                        </button
+                        
                     </div>
                 </div>
                 `
