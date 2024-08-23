@@ -439,6 +439,10 @@ div#events-link .section-title {
    padding: 10px;
    text-align: center;
    margin: 20px;
+   transition: transform 0.25s ease-in-out;
+}
+.counters .counter:hover{
+   transform: translateY(-10px);
 }
 
 .counters .counter span {
