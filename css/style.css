@@ -1442,7 +1442,6 @@ body.page-loaded .preloader svg path {
 .navbar .site-menu {
   display: flex;
   flex-wrap: wrap-reverse;
-  margin: 0 auto;
 }
 
 .navbar .site-menu ul {

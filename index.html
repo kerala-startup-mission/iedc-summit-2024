@@ -41,6 +41,12 @@
   <meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+
   <title>IEDC Summit 2024</title>
 
   <!-- FAVICON FILES -->
@@ -116,7 +122,7 @@
 
     <nav class="navbar xc-nav-fixed" id="navbar">
       <div class="container">
-        <div class="logo"> <a href="#home"> <img src="images/ksum-logo-01.png" alt="Image"> </a> </div>
+        <div class="logo"> <a href="#home"> <img src="images/logo-tilt.png" alt="Image"> </a> </div>
         <!-- end logo -->
         <div class="site-menu">
           <ul>
@@ -128,6 +134,13 @@
             <li><a href="#live-calls">Live Calls</a></li>
             <li><a href="#contact-link">Contact</a></li>
           </ul>
+
+          <div class="navbar-button copy-click"> <a class="xc-nav-btn"
+              href="https://tickets.iedcsummit.in/login/visitor">
+              <figure><img src="images/icon-navbar-button.png" alt="Image"></figure>
+              <span class="copy-text">Book Tickets</span>
+            </a>
+          </div>
         </div>
 
         <div class="hamburger-menu">
@@ -143,11 +156,7 @@
         </div>
         <!-- end hamburger-menu -->
 
-        <div class="navbar-button copy-click"> <a class="xc-nav-btn" href="https://tickets.iedcsummit.in/login/visitor">
-            <figure><img src="images/icon-navbar-button.png" alt="Image"></figure>
-            <span class="copy-text">Book Tickets</span>
-          </a>
-        </div>
+
         <!-- end navbar-button -->
       </div>
       <!-- end container -->
@@ -157,146 +166,23 @@
 
 
     <div class="section-wrapper" data-scroll-section id="home">
-      <section class="slider" id="xc-slider">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="events-slider-content">
-                <div class="swiper-wrapper">
 
-                  <style type="text/css">
-                    .xc-slide {
-                      display: flex;
-                      flex-direction: column;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      justify-content: center;
-                      align-items: flex-start;
-                    }
-
-                    .xc-slide del:before {
-                      content: " ";
-                      display: block;
-                      width: 100%;
-                      border-top: 2px solid #fff;
-                      height: 4px;
-                      position: absolute;
-                      bottom: 10px;
-                      left: 0;
-                      transform: rotate(-11deg);
-                    }
-
-                    .xc-slide del:after {
-                      content: " ";
-                      display: block;
-                      width: 100%;
-                      border-top: 2px solid #fff;
-                      height: 4px;
-                      position: absolute;
-                      bottom: 10px;
-                      left: 0;
-                      transform: rotate(11deg);
-                    }
-
-                    .xc-slide del {
-                      position: relative;
-                      text-decoration: none;
-                    }
-
-                    .d-fxc {
-                      display: flex;
-                      flex-direction: row;
-                      flex-wrap: wrap;
-                      justify-content: flex-start;
-                    }
-
-                    .slider .events-slider-images .slide-image {
-
-                      background-size: contain !important;
-                      background-repeat: no-repeat !important;
-                    }
-
-                    .copy-click {
-                      cursor: pointer;
-
-                      filter: drop-shadow(2px 4px 6px black);
-                    }
-
-                    /*@media  (max-width: 790px) {
-  body {
-   }
-}*/
-                  </style>
-
-                  <div class="swiper-slide  ">
-                    <div class="inner xc-slide">
-                      <div class="date">
-                        <figure><img src="images/icon-date.svg" alt="Image"></figure>
-
-                        <!-- <span>August 24 <sup>th</sup>, 2024</span> -->
-                        <span> To Be Announced </span>
-                      </div>
-                      <h2 class="xc-slider-head">Early Bird Offer</h2>
-                      <h4 class=""> <del>&#8377;1000 </del> <span class="ms-2">&#8377;750/-</span> </h4>
-                      <h6>To avail early bird offer, <br>apply Coupon Code <b>"EARLYBIRD"</b></h6>
-                      <div class="d-fxc">
-                        <a target="_blank" href="https://tickets.iedcsummit.in/login/visitor" class="slider-button">
-                          <span class="circle" aria-hidden="true"> <span class="icon arrow"></span> </span> <span
-                            class="button-text">Book Ticket</span></a>
-                        <div class="location">
-                          <div class="icon"><img src="images/icon-location.svg" alt="Image"></div>
-                          <span>NIT Calicut</span>
-                        </div>
-                      </div>
-                      <!-- end location -->
-                    </div>
-                    <!-- end inner -->
-                  </div>
-
-
-
-
-                  <!-- end swiper-slide -->
-                </div>
-                <!-- end swiper-wrapper -->
-              </div>
-              <!-- end events-slider-content -->
-            </div>
-            <!-- end col-6 -->
-            <!-- <div class="col-lg-6">
-              <img src="images/stack.png" alt="">
-            </div> -->
-            <div class="col-lg-6">
-              <div class="events-slider-images">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="slide-image" data-background="images/stack.png"></div>
-                  </div>
-
-
-                  <!-- end swiper-slide -->
-                </div>
-                <!-- end swiper-wrapper -->
-                <!--   <div class="button-prev"><span class="icon arrow"></span></div>
-              <div class="button-next"><span class="icon arrow"></span></div> -->
-              </div>
-              <!-- end events-slider-content -->
-            </div>
-
-            <!-- end swiper-slide -->
-            <!-- end swiper-wrapper -->
-            <!--   <div class="button-prev"><span class="icon arrow"></span></div>
-              <div class="button-next"><span class="icon arrow"></span></div> -->
-            <!-- end events-slider-content -->
-
-            <!-- end col-6 -->
-          </div>
-          <!-- end row -->
+      <section id="hero-section">
+        <span class="left"> IEDC SUMMIT 2024 IEDC SUMMIT 2024 IEDC SUMMIT 2024 </span>
+        <div class="content">
+          <h1 class="title"> Beyond The Horizon </h1>
+          <p>
+            It&apos;s where today's ideas transform into tomorrow's breakthroughs,<br>
+            pushing the boundaries of what's possible. Join visionaries and disruptors<br>
+            as we journey into the future, unlocking new paths in a world of endless<br>
+            possibilities.
+          </p>
         </div>
-        <!-- end container -->
+        <span class="right"> IEDC SUMMIT 2024 IEDC SUMMIT 2024 IEDC SUMMIT 2024 </span>
       </section>
-      <!-- end slider -->
-
+      <div class="breaker">
+        <span> IEDC SUMMIT 2024 IEDC SUMMIT 2024 IEDC SUMMIT 2024 </span>
+      </div>
 
 
 
