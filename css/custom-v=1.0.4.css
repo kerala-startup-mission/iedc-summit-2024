@@ -116,18 +116,22 @@ div#events-link .section-title {
    position: fixed;
 }
 
-.navbar .container-mine {
-   border: 1px solid red;
+.navbar .container {
    display: flex;
    justify-content: space-between;
    width: 100%;
    padding: 0 2rem;
 }
 
-.navbar .container-mine .site-menu {
-   border: 1px solid red;
+.navbar .container .site-menu {
    display: flex;
    align-items: center;
+}
+
+@media (width < 1000px) {
+   .navbar .container .site-menu {
+      display: none;
+   }
 }
 
 .xc-slider-head {
@@ -618,4 +622,25 @@ div#events-link .section-title {
    background: linear-gradient(180deg, #CFCFCF 0%, #001354 100%);
    -webkit-text-fill-color: transparent;
    -webkit-background-clip: text;
+}
+
+@media (width < 1000px) {
+   .breaker span {
+      font-size: 15px;
+   }
+
+   #hero-section .content h1 {
+      font-size: 60px;
+      line-height: 60px;
+   }
+
+   #hero-section .content p {
+      font-size: 14px;
+      line-height: 25px;
+   }
+
+   #hero-section span {
+      font-size: 1.5rem;
+      opacity: 0.3;
+   }
 }
