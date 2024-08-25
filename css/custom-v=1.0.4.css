@@ -601,13 +601,10 @@ div#events-link .section-title {
    display: flex;
    justify-content: center;
    align-items: center;
-
 }
 
-.breaker span {
-   width: 100%;
+.breaker marquee {
    height: 2rem;
-
    font-family: Outfit;
    font-size: 25px;
    font-weight: 300;
@@ -616,12 +613,12 @@ div#events-link .section-title {
    text-align: left;
 
    display: flex;
-   justify-content: center;
+   /* justify-content: center; */
    align-items: center;
 
-   background: linear-gradient(180deg, #CFCFCF 0%, #001354 100%);
+   /* background: linear-gradient(180deg, #CFCFCF 0%, #001354 100%);
    -webkit-text-fill-color: transparent;
-   -webkit-background-clip: text;
+   -webkit-background-clip: text; */
 }
 
 @media (width < 1000px) {
