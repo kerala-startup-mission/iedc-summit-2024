@@ -3,48 +3,48 @@
     "use strict";
 
 
-    //NOTIFICATION POP UP
-    let popupShown = false;
+    // //NOTIFICATION POP UP
+    // let popupShown = false;
 
 
 
-    function showPopup() {
-      if (!popupShown) {
-        iziToast.show({
-          title: 'Dates Announced!!',
-          message: 'Summit set to happen on October 19th, 2024',
-          position: 'bottomRight',
-          timeout: 5000, // Duration in milliseconds (3 seconds)
-          progressBar: true, // Enable progress bar
-          progressBarColor: '#0a7ed8', // Progress bar color
-          backgroundColor: '#ffffff', // Background color of the popup
-          transitionIn: 'bounceInUp', // Slide in from the right
-          transitionOut: 'fadeOutDown', // Slide out to the right
-          closeOnClick: true,
-          onClosed: function () {
-            popupShown = false; // Allow the popup to show again if needed
-          },
-          onOpening: function (instance, toast) {
-            // Adding the click event listener directly to the toast element
-            toast.addEventListener('click', function () {
-              const a = document.createElement('a');
-              a.href = "/events";
-              a.click();
-            });
-          }
-        });
+    // function showPopup() {
+    //   if (!popupShown) {
+    //     iziToast.show({
+    //       title: 'Dates Announced!!',
+    //       message: 'Summit set to happen on October 19th, 2024',
+    //       position: 'bottomRight',
+    //       timeout: 5000, // Duration in milliseconds (3 seconds)
+    //       progressBar: true, // Enable progress bar
+    //       progressBarColor: '#0a7ed8', // Progress bar color
+    //       backgroundColor: '#ffffff', // Background color of the popup
+    //       transitionIn: 'bounceInUp', // Slide in from the right
+    //       transitionOut: 'fadeOutDown', // Slide out to the right
+    //       closeOnClick: true,
+    //       onClosed: function () {
+    //         popupShown = false; // Allow the popup to show again if needed
+    //       },
+    //       onOpening: function (instance, toast) {
+    //         // Adding the click event listener directly to the toast element
+    //         toast.addEventListener('click', function () {
+    //           const a = document.createElement('a');
+    //           a.href = "/events";
+    //           a.click();
+    //         });
+    //       }
+    //     });
 
-        popupShown = true;
-      }
-    }
+    //     popupShown = true;
+    //   }
+    // }
 
-    let scrollCount = 0;
-    window.addEventListener("scroll", function () {
-      if (!popupShown && scrollCount === 0) {
-        showPopup();
-        scrollCount++;
-      }
-    });
+    // let scrollCount = 0;
+    // window.addEventListener("scroll", function () {
+    //   if (!popupShown && scrollCount === 0) {
+    //     showPopup();
+    //     scrollCount++;
+    //   }
+    // });
 
 
     // // MASONRY
