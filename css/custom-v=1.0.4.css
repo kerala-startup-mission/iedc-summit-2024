@@ -511,7 +511,8 @@ div#events-link .section-title {
    margin: 0;
 }
 
-#hero-section span {
+#hero-section .left,
+#hero-section .right {
    white-space: nowrap;
    display: block;
    font-family: "Outfit" sans-serif;
@@ -636,7 +637,8 @@ div#events-link .section-title {
       line-height: 25px;
    }
 
-   #hero-section span {
+   #hero-section .left,
+   #hero-section .right {
       font-size: 1.5rem;
       opacity: 0.3;
    }
