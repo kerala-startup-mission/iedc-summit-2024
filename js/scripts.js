@@ -3,48 +3,48 @@
     "use strict";
 
 
-    //NOTIFICATION POP UP
-    let popupShown = false;
+    // //NOTIFICATION POP UP
+    // let popupShown = false;
 
 
 
-    function showPopup() {
-      if (!popupShown) {
-        iziToast.show({
-          title: 'Alert!!',
-          message: 'IEDC Summit has been postponed until further notice',
-          position: 'bottomRight',
-          timeout: 5000, // Duration in milliseconds (3 seconds)
-          progressBar: true, // Enable progress bar
-          progressBarColor: '#0a7ed8', // Progress bar color
-          backgroundColor: '#ffffff', // Background color of the popup
-          transitionIn: 'bounceInUp', // Slide in from the right
-          transitionOut: 'fadeOutDown', // Slide out to the right
-          closeOnClick: true,
-          onClosed: function () {
-            popupShown = false; // Allow the popup to show again if needed
-          },
-          onOpening: function (instance, toast) {
-            // Adding the click event listener directly to the toast element
-            toast.addEventListener('click', function () {
-              const a = document.createElement('a');
-              a.href = "/events";
-              a.click();
-            });
-          }
-        });
+    // function showPopup() {
+    //   if (!popupShown) {
+    //     iziToast.show({
+    //       title: 'Dates Announced!!',
+    //       message: 'Summit set to happen on October 19th, 2024',
+    //       position: 'bottomRight',
+    //       timeout: 5000, // Duration in milliseconds (3 seconds)
+    //       progressBar: true, // Enable progress bar
+    //       progressBarColor: '#0a7ed8', // Progress bar color
+    //       backgroundColor: '#ffffff', // Background color of the popup
+    //       transitionIn: 'bounceInUp', // Slide in from the right
+    //       transitionOut: 'fadeOutDown', // Slide out to the right
+    //       closeOnClick: true,
+    //       onClosed: function () {
+    //         popupShown = false; // Allow the popup to show again if needed
+    //       },
+    //       onOpening: function (instance, toast) {
+    //         // Adding the click event listener directly to the toast element
+    //         toast.addEventListener('click', function () {
+    //           const a = document.createElement('a');
+    //           a.href = "/events";
+    //           a.click();
+    //         });
+    //       }
+    //     });
 
-        popupShown = true;
-      }
-    }
+    //     popupShown = true;
+    //   }
+    // }
 
-    let scrollCount = 0;
-    window.addEventListener("scroll", function () {
-      if (!popupShown && scrollCount === 0) {
-        showPopup();
-        scrollCount++;
-      }
-    });
+    // let scrollCount = 0;
+    // window.addEventListener("scroll", function () {
+    //   if (!popupShown && scrollCount === 0) {
+    //     showPopup();
+    //     scrollCount++;
+    //   }
+    // });
 
 
     // // MASONRY
@@ -303,32 +303,6 @@
       }
 
     }
-    // }
-    // if (instance.direction === 'up' && !static) {
-    //   if (instance.scroll.y <= headerHeight) {
-    //     header.classList.remove('pinned');
-    //     if (header.classList.contains('navbar')) {
-    //       header.classList.remove('dark');
-    //       header.classList.add('light');
-    //     }
-    //     static = true;
-    //   }
-    // }
-    // if (instance.direction === 'down' && !hidden) {
-    //   if (instance.scroll.y > (headerHeight / 2)) {
-    //    // console.log('hidden');
-    //     header.classList.remove('pinned');
-    //     header.classList.add('unpinned');
-    //     hidden = true;
-    //   }
-    // }
-    // if (instance.direction === 'up' && hidden) {
-    //   //console.log('show');
-    //   header.classList.remove('unpinned');
-    //   header.classList.add('pinned');
-    //   hidden = false;
-    // }
-
 
   });
 
@@ -384,3 +358,90 @@
 
 
 })(jQuery);
+
+const appendData = (container, data, emptyMessage, type = "event") => {
+  console.log(data[0].posterImage);
+  if (data.length) {
+    data.forEach(item => {
+      const card = document.createElement('div');
+      card.onclick = () => {
+        window.location.href = "/events/";
+      }
+      card.classList.add('card');
+
+
+      if (type == "event") {
+        card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.imgUrl}" alt="">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h1>${item.eventName}</h1>
+                    </div>
+                </div>
+                `;
+      }
+      else if (type == "lecture") {
+        card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.imgUrl}" alt="">
+                </div>
+                <div class="details">
+                    <h1>${item.eventName}</h1>
+                </div>
+                `;
+      }
+      else {
+        card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.imgUrl}" alt="">
+                </div>
+                <div class="details">
+                    <h1>${item.eventName}</h1>
+                </div>
+                `
+      }
+
+      container.appendChild(card);
+    });
+  }
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const eventCardsContainer = document.querySelector('#card-container .event-cards');
+  const lectureCardsContainer = document.querySelector('#card-container .event-cards');
+  const workshopsCardsContainer = document.querySelector('#card-container .event-cards');
+
+  fetch("https://iedc-summit-backend.vercel.app/getEvents")
+    .then(res => res.json())
+    .then(events =>
+      appendData(eventCardsContainer, events, "No events available", "event")
+    );
+
+  fetch("https://iedc-summit-backend.vercel.app/getLectures")
+    .then(res => res.json())
+    .then(lectures =>
+      appendData(lectureCardsContainer, lectures, "No Lecutres available", "lecture")
+    );
+
+  fetch("https://iedc-summit-backend.vercel.app/getWorkshops")
+    .then(res => res.json())
+    .then(workshops =>
+      appendData(workshopsCardsContainer, workshops, "No Workshops available", "workshop")
+    )
+
+
+  const caCard = document.querySelector('.card.ca-card');
+  if (caCard) {
+    caCard.onclick = () => {
+      const linkElement = document.createElement('a');
+      linkElement.href = 'https://forms.zohopublic.eu/iedcnitc/form/BugTracker/formperma/DD9N7xCt86lBQgwVvFuR_5lqUS5CZ_gs55W79HP4MVM';
+      linkElement.target = "_blank";
+
+      linkElement.click();
+    }
+  }
+});
