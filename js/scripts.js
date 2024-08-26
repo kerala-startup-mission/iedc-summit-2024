@@ -384,3 +384,90 @@
 
 
 })(jQuery);
+
+const appendData = (container, data, emptyMessage, type = "event") => {
+  console.log(data[0].posterImage);
+  if (data.length) {
+    data.forEach(item => {
+      const card = document.createElement('div');
+      card.onclick = () => {
+        window.location.href = "/events/";
+      }
+      card.classList.add('card');
+
+
+      if (type == "event") {
+        card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.imgUrl}" alt="">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h1>${item.eventName}</h1>
+                    </div>
+                </div>
+                `;
+      }
+      else if (type == "lecture") {
+        card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.imgUrl}" alt="">
+                </div>
+                <div class="details">
+                    <h1>${item.eventName}</h1>
+                </div>
+                `;
+      }
+      else {
+        card.innerHTML = `
+                <div class="poster">
+                    <img src="${item.imgUrl}" alt="">
+                </div>
+                <div class="details">
+                    <h1>${item.eventName}</h1>
+                </div>
+                `
+      }
+
+      container.appendChild(card);
+    });
+  }
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const eventCardsContainer = document.querySelector('#card-container .event-cards');
+  const lectureCardsContainer = document.querySelector('#card-container .event-cards');
+  const workshopsCardsContainer = document.querySelector('#card-container .event-cards');
+
+  fetch("https://iedc-summit-backend.vercel.app/getEvents")
+    .then(res => res.json())
+    .then(events =>
+      appendData(eventCardsContainer, events, "No events available", "event")
+    );
+
+  fetch("https://iedc-summit-backend.vercel.app/getLectures")
+    .then(res => res.json())
+    .then(lectures =>
+      appendData(lectureCardsContainer, lectures, "No Lecutres available", "lecture")
+    );
+
+  fetch("https://iedc-summit-backend.vercel.app/getWorkshops")
+    .then(res => res.json())
+    .then(workshops =>
+      appendData(workshopsCardsContainer, workshops, "No Workshops available", "workshop")
+    )
+
+
+  const caCard = document.querySelector('.card.ca-card');
+  if (caCard) {
+    caCard.onclick = () => {
+      const linkElement = document.createElement('a');
+      linkElement.href = 'https://forms.zohopublic.eu/iedcnitc/form/BugTracker/formperma/DD9N7xCt86lBQgwVvFuR_5lqUS5CZ_gs55W79HP4MVM';
+      linkElement.target = "_blank";
+
+      linkElement.click();
+    }
+  }
+});

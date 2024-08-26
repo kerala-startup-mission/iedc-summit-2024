@@ -622,6 +622,107 @@ div#events-link .section-title {
    -webkit-background-clip: text; */
 }
 
+.content-section #card-container {
+   width: 100dvw;
+   overflow-x: scroll;
+}
+
+
+.content-section #card-container .card {
+   background-color: white;
+   border-radius: 30px;
+   overflow: hidden;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   position: relative;
+   width: 360px;
+}
+
+.content-section #card-container .poster {
+   width: 100%;
+   height: 250px;
+   background-color: gray;
+}
+
+.content-section #card-container .poster img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.content-section #card-container .details {
+   padding: 35px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   flex-grow: 1;
+}
+
+.content-section #card-container .details h1 {
+   font-size: 1.3rem;
+   text-align: center;
+}
+
+.content-section #card-container .details p {
+   margin-left: 2px;
+}
+
+.content-section #card-container .time {
+   display: flex;
+   align-items: center;
+   margin-left: 5px;
+}
+
+.content-section #card-container .time .divider {
+   font-size: 2em;
+   font-weight: 100;
+}
+
+.content-section #card-container .details button {
+   padding: 10px 25px;
+   border: 0;
+   border-radius: 30px;
+   background-color: rgb(57, 47, 137);
+   color: white;
+   cursor: pointer;
+   width: fit-content;
+}
+
+.content-section #card-container .details button a {
+   color: white;
+}
+
+
+.content-section #card-container .details .buttons {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 20px;
+   align-items: center;
+   gap: 10px;
+}
+
+.content-section #card-container .barcode {
+   width: 35px;
+   position: absolute;
+   top: 60%;
+   right: 20px;
+   transform: translateY(-50%);
+}
+
+
+.content-section #card-container .event-cards {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   margin: 100px 0;
+   padding: 0 50px;
+   width: 3000px;
+}
+
+
 @media (width < 1000px) {
    .breaker span {
       font-size: 15px;
@@ -641,5 +742,27 @@ div#events-link .section-title {
    #hero-section .right {
       font-size: 1.5rem;
       opacity: 0.3;
+   }
+}
+
+@media (width < 500px) {
+   .content-section #card-container .details .buttons {
+      flex-direction: column;
+   }
+
+   .content-section #card-container .details button {
+      width: 100%;
+   }
+
+   .content-section #card-container .time {
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      justify-content: center;
+      align-items: start;
+   }
+
+   .content-section #card-container .time .divider {
+      display: none;
    }
 }
