@@ -11,8 +11,8 @@
     function showPopup() {
       if (!popupShown) {
         iziToast.show({
-          title: 'Alert!!',
-          message: 'IEDC Summit has been postponed until further notice',
+          title: 'Dates Announced!!',
+          message: 'Summit set to happen on October 19th, 2024',
           position: 'bottomRight',
           timeout: 5000, // Duration in milliseconds (3 seconds)
           progressBar: true, // Enable progress bar
@@ -38,13 +38,13 @@
       }
     }
 
-    // let scrollCount = 0;
-    // window.addEventListener("scroll", function () {
-    //   if (!popupShown && scrollCount === 0) {
-    //     showPopup();
-    //     scrollCount++;
-    //   }
-    // });
+    let scrollCount = 0;
+    window.addEventListener("scroll", function () {
+      if (!popupShown && scrollCount === 0) {
+        showPopup();
+        scrollCount++;
+      }
+    });
 
 
     // // MASONRY
