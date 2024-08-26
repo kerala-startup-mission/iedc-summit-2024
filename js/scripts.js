@@ -38,13 +38,13 @@
       }
     }
 
-    let scrollCount = 0;
-    window.addEventListener("scroll", function () {
-      if (!popupShown && scrollCount === 0) {
-        showPopup();
-        scrollCount++;
-      }
-    });
+    // let scrollCount = 0;
+    // window.addEventListener("scroll", function () {
+    //   if (!popupShown && scrollCount === 0) {
+    //     showPopup();
+    //     scrollCount++;
+    //   }
+    // });
 
 
     // // MASONRY
@@ -303,32 +303,6 @@
       }
 
     }
-    // }
-    // if (instance.direction === 'up' && !static) {
-    //   if (instance.scroll.y <= headerHeight) {
-    //     header.classList.remove('pinned');
-    //     if (header.classList.contains('navbar')) {
-    //       header.classList.remove('dark');
-    //       header.classList.add('light');
-    //     }
-    //     static = true;
-    //   }
-    // }
-    // if (instance.direction === 'down' && !hidden) {
-    //   if (instance.scroll.y > (headerHeight / 2)) {
-    //    // console.log('hidden');
-    //     header.classList.remove('pinned');
-    //     header.classList.add('unpinned');
-    //     hidden = true;
-    //   }
-    // }
-    // if (instance.direction === 'up' && hidden) {
-    //   //console.log('show');
-    //   header.classList.remove('unpinned');
-    //   header.classList.add('pinned');
-    //   hidden = false;
-    // }
-
 
   });
 
