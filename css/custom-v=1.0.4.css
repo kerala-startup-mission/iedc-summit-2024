@@ -627,6 +627,26 @@ div#events-link .section-title {
    overflow-x: scroll;
 }
 
+/* width */
+.content-section #card-container::-webkit-scrollbar {
+   margin: 1rem;
+   width: 10px;
+}
+
+/* Track */
+.content-section #card-container::-webkit-scrollbar-track {
+   background: #f1f1f1;
+}
+
+/* Handle */
+.content-section #card-container::-webkit-scrollbar-thumb {
+   background: #888;
+}
+
+/* Handle on hover */
+.content-section #card-container::-webkit-scrollbar-thumb:hover {
+   background: #555;
+}
 
 .content-section #card-container .card {
    background-color: white;
