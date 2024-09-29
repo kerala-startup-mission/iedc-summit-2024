@@ -26,7 +26,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    width: 360px;
+    width: 400px;
 }
 
 .poster {
@@ -38,7 +38,7 @@ body {
 .poster img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .details {
@@ -123,9 +123,22 @@ body {
 }
 
 .navbar {
-    background-color: #3A3089;
+    background-color: #ffffff;
 }
 
+.navbar .site-menu ul li a{
+    color: black;
+}
+
+.navbar-button span{
+    color: black;
+}
+.image-black {
+    filter: invert(1) brightness(0);
+  }
+.event-nav{
+    position: fixed;
+}
 @media (width < 500px) {
     .details .buttons {
         flex-direction: column;
