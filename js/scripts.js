@@ -65,7 +65,7 @@
       }
       loadscreen.style.transition = '0.1s'
       loadscreen.style.width = Width + '%'
-    }, 1)
+    }, 50)
 
     // SEARCH BOX
     $('.search-button, .search-box .close-btn').on('click', function (e) {
@@ -345,14 +345,37 @@ document.addEventListener('DOMContentLoaded', () => {
       
       allData.sort((a,b)=> a.priority - b.priority)
 
-      const speakerData = data['speakers']
-      speakerData.sort((a,b)=> b.priority - a.priority)
+      const speakerData = data['speakers']      
       const sponsorsData = data['partners']
       const FAQ = data['faqs']
       const news = data['news']
+      speakerData.sort((a,b)=> b.priority - a.priority)
+      sponsorsData.sort((a,b)=> a.priority - b.priority)
+      FAQ.sort((a,b)=> a.priority - b.priority)
+      news.sort((a,b)=> a.priority - b.priority)
+
 
       // Append combined data to the eventCardsContainer
-      appendData(eventCardsContainer, allData)
+      // appendData(eventCardsContainer, allData)
+
+      displayFilteredData(eventCardsContainer ,data['events'])
+
+      // Setup event listeners for the buttons
+      document.getElementById('show-events').addEventListener('click', () => {
+        displayFilteredData(eventCardsContainer ,data['events'])
+        setActiveButton('show-events')
+      })
+
+      document.getElementById('show-lectures').addEventListener('click', () => {
+        displayFilteredData(eventCardsContainer ,data['lectures'])
+        setActiveButton('show-lectures')
+      })
+
+      document.getElementById('show-workshops').addEventListener('click', () => {
+        displayFilteredData(eventCardsContainer ,data['workshops'])
+        setActiveButton('show-workshops')
+      })
+
       displaySpeakers(speakerData)
       displaySponsors(sponsorsData)
       displayFAQS(FAQ)
@@ -361,9 +384,21 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Error fetching data:', error))
 })
 
+function displayFilteredData(eventCardsContainer, data ) {
+  appendData(eventCardsContainer, data)
+}
+
+// Function to mark the active button
+function setActiveButton(activeButtonId) {
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    button.classList.remove('active')
+  })
+  document.getElementById(activeButtonId).classList.add('active')
+}
+
 // Update the appendData function to handle the new structure
 const appendData = (container, data) => {
-  if (!data.length) return // Exit if no data
+  // if (!data.length) return // Exit if no data
 
   if (window.innerWidth<468){
      cardWidth = 360// Define the card width 
@@ -455,18 +490,21 @@ function displaySpeakers (data) {
 function displayNews(data){
   const dataDisplay = document.getElementById('breaker')
   dataDisplay.innerHTML = '' // Clear "Loading" message
+  let title = ""
 
   data.forEach(item => {
     // Limiting to 10 items for display
-    const card = document.createElement('div')
+    title+=" " + item.Title + " "
+  })
+
+  const card = document.createElement('div')
     card.className = "breaker"
     card.innerHTML = `
-              <marquee scrollamount="12"> <strong>${item.Title}</strong>
+              <marquee scrollamount="12"> <strong>${title}</strong>
           </marquee>
     `
 
     dataDisplay.appendChild(card)
-  })
 }
 
 function displayFAQS (data) {
