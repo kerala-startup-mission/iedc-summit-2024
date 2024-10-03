@@ -65,7 +65,7 @@
       }
       loadscreen.style.transition = '0.1s'
       loadscreen.style.width = Width + '%'
-    }, 50)
+    },50)
 
     // SEARCH BOX
     $('.search-button, .search-box .close-btn').on('click', function (e) {
@@ -543,15 +543,14 @@ function displaySponsors (data) {
     card.className = 'sponsors-logo'
     card.setAttribute('data-aos', 'fade-up');
     card.innerHTML = `
-                <img src="${item.imgUrl}" alt="${item.Name}" class="sponsors-logo-img">
-                <p class="sponsors-logo-name">${item.Name}</p>
+                <img src="${item.imgUrl}" alt="${item.Name}" class="sponsors-logo-img">         
     `
 
     dataDisplay.appendChild(card)
   })
 }
 
-
+{/* <p class="sponsors-logo-name">${item.Name}</p> */}
 
 
 /* COUNTERS */
