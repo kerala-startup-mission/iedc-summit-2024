@@ -543,8 +543,7 @@ function displaySponsors (data) {
     card.className = 'sponsors-logo'
     card.setAttribute('data-aos', 'fade-up');
     card.innerHTML = `
-                <img src="${item.imgUrl}" alt="${item.Name}" class="sponsors-logo-img">
-                
+                <img src="${item.imgUrl}" alt="${item.Name}" class="sponsors-logo-img">         
     `
 
     dataDisplay.appendChild(card)
