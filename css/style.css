@@ -1202,6 +1202,144 @@ body.page-loaded .preloader svg path {
   top: 0;
 }
 
+
+/* CUSTOM BUTTON   */
+.custom-button {
+  width:240px;
+  height: 64px;
+  float: left;
+  position: relative;
+  white-space: nowrap;
+}
+
+.custom-button.light {
+  color: #010000;
+}
+
+.custom-button.light:hover .circle .icon.arrow {
+  background: #0a7ed8;
+}
+
+.custom-button.light:hover .button-text {
+  color: #0a7ed8;
+}
+
+.custom-button.light .circle {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: relative;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  background: #fff;
+  border-radius: 64px;
+}
+
+.custom-button.light .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #0a7ed8;
+}
+
+.custom-button.light .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 18px;
+  width: 18px;
+  height: 2px;
+  background: none;
+}
+
+.custom-button.light .circle .icon.arrow::before {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #0a7ed8;
+  border-right: 0.125rem solid #0a7ed8;
+  transform: rotate(45deg);
+}
+
+.custom-button.light .button-text {
+  color: #0b0a0a;
+}
+
+.custom-button .circle {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: relative;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  background: #0a7ed8;
+  border-radius: 64px;
+}
+
+.custom-button .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+.custom-button .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 18px;
+  width: 18px;
+  height: 2px;
+  background: none;
+}
+
+.custom-button .circle .icon.arrow::before {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+.custom-button .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 70px;
+  color: #000000;
+  font-weight: 600;
+  line-height: 64px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.custom-button:hover {
+  color: #fff;
+}
+
+.custom-button:hover .circle {
+  width: 100%;
+}
+
+.custom-button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+.custom-button:hover .button-text {
+  color: #fff;
+}
+
+
+
 /* CUSTOM BUTTON 1  */
 .custom-button_1 {
   width:240px;
@@ -2827,10 +2965,18 @@ body.page-loaded .preloader svg path {
   .button-text{
     color:white;
   }
-  .custom-button .button-text{
+
+  .custom-button_1 .button-text{
     color:white;
     font-weight: 800;
     font-size:24px;
+    padding-left:20px;
+  }
+
+  .custom-button_2 .button-text{
+    color:white;
+    font-weight: 800;
+    font-size:20px;
     padding-left:20px;
   }
 }
@@ -5128,5 +5274,14 @@ only screen and (max-device-width: 767px) {
 @media (max-width: 900px) {
   .grab-button {
     flex-direction: column; /* Change direction to column */
+  }
+}
+
+@media (max-width: 500px) {
+  .custom-button_1{
+    width:90vw;
+  }
+  .custom-button_2{
+    width:90vw;
   }
 }
