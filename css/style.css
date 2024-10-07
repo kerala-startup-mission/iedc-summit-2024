@@ -5026,10 +5026,29 @@ only screen and (max-device-width: 767px) {
 
 .sponsors-card-grid {
   display: flex; /* Use flexbox for layout */
-  justify-content: space-around; /* Center logos horizontally */
-  align-items: center;
-  flex-wrap: wrap; /* Allow logos to wrap */
-  gap: 20px; /* Spacing between logos */
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: space-around; /* Center items horizontally */
+  gap: 20px; /* Spacing between items */
+}
+
+.sponsors-card-grid .sponsors-logo {
+  flex: 1 1 23%; /* Flex-grow, flex-shrink, and flex-basis (23% leaves space for 4 items + gaps) */
+  max-width: 23%; /* Ensures no more than 4 items per row */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+@media (max-width: 768px) {
+  .sponsors-card-grid .sponsors-logo {
+    flex: 1 1 45%; /* Adjusts for smaller screens (2 items per row) */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-card-grid .sponsors-logo {
+    flex: 1 1 100%; /* Full width for small screens (1 item per row) */
+    max-width: 100%;
+  }
 }
 
 .sponsors-logo {
