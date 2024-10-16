@@ -335,7 +335,6 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('https://iedc.agonline.in/api/get-data')
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       // Combine events, lectures, and workshops into a single list with an added 'type' field
       const allData = [
         ...data.events.map(item => ({ ...item, type: 'event' })),
@@ -456,7 +455,6 @@ const appendData = (container, data) => {
 
     container.appendChild(card)
     const totalWidth = (cardWidth + gap) * data.length - gap // (card width + gap) * number of items - last gap
-    console.log(cardWidth)
     container.style.width = totalWidth + 'px'
   })
 }

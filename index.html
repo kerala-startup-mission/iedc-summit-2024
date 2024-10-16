@@ -95,6 +95,30 @@
           once: true      // whether animation should happen only once - while scrolling down
         });
       </script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        ;(function () {
+          const e = 'lipy-chat'
+          if (document.getElementById(e)) return
+          const t = document.createElement('script')
+          t.id = e
+          t.src = 'https://cdn.lipy.ai/packages/webchat.js'
+          t.onload = function () {
+            window.LipyWebchat({
+              apiKey: 'QjnNvH8miofexn3EL0t7F8li36WdTY',
+              orgId: 'lNEYgcPI2Udu16Zb',
+            })
+          }
+          t.onerror = function () {
+            console.error('Failed to load the Lipy webchat script.')
+          }
+          document.body.appendChild(t)
+        })()
+      })
+    </script>
+    
+    
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -146,7 +170,9 @@
               <li><a href="/events/">Events</a></li>
               <li><a href="#speakers-link">Speakers</a></li>
               <!-- <li><a href="#schedule-link">Schedule</a></li> -->
-              <li><a href="#live-calls">Live Calls</a></li>
+              <li><a href="/schedule/">Schedule</a></li>
+
+              <!-- <li><a href="#live-calls">Live Calls</a></li> -->
               <li><a href="#contact-link">Contact</a></li>
               <li><a href="#faqs">FAQs</a></li>
 
@@ -177,7 +203,8 @@
               <li><a href="#speakers-link">Speakers</a></li>
               <!-- <li><a href="#schedule-link">Schedule</a></li> -->
               <!-- <li><a href="#campus-ambassador">Campus Ambassador</a></li> -->
-              <li><a href="#live-calls">Live Calls</a></li>
+              <!-- <li><a href="#live-calls">Live Calls</a></li> -->
+              <li><a href="/schedule/">Schedule</a></li>
               <li><a href="#contact-link">Contact</a></li>
               <li><a href="#faqs">FAQs</a></li>
 
@@ -228,11 +255,11 @@
             </p>
             <div class="grab-button">
             <a href="https://tickets.iedcsummit.in/login/visitor"
-              target="_blank" class="custom-button_1">
+              target="_blank" class="custom-button_1 button-text-book">
               <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
               </span>
-              <span class="button-text" id="contact-link-o">
+              <span class="button-text button-text-book" id="contact-link-o">
                 Book Tickets
               </span>
             </a>
@@ -243,6 +270,15 @@
               </span>
               <span class="button-text" id="contact-link-o">
                 Grab your Merchandise
+              </span>
+            </a>
+            <a href="https://tiqr.events/e/IEDC-Summit'24-CULT-NIGHT-326"
+              target="_blank" class="custom-button_2">
+              <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="button-text" id="contact-link-o">
+                Proshow Tickets
               </span>
             </a>
           </div>
@@ -717,17 +753,17 @@
             </div>
           </section>
 
-          <!-- Call for corporates-->
+          <!-- Call for corporates
           <section class="content-section mb-4" id="live-calls">
             <div class="section-title text-center">
               <h2> Live Calls </h2>
-            </div>
+            </div> -->
 
             <!-- <span class="section-bg"
               data-background="images/section-bg01.png"></span> -->
             <!-- end section-bg -->
 
-            <div class="live-calls-container">
+            <!-- <div class="live-calls-container">
               <div class="call-card">
                 <img src="images/call_for_government_departments.png"
                   alt="Government Departments" class="call-image">
@@ -793,10 +829,10 @@
                 <a href="https://forms.gle/YCKRkLHJyFJsqdDJ7" class="call-text"
                   target="_blank">Apply Now</a>
               </div>
-            </div>
+            </div> -->
 
             <!-- end container -->
-          </section>
+          <!-- </section> -->
           <!-- end content-section -->
           <section class="content-section">
             <!-- <span class="section-bg" data-background="images/section-bg01.png"
