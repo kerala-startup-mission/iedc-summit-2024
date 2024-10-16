@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: "League Spartan", sans-serif;
+    min-height: 100vh;
+}
+
+/* .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+} */
+
+.card {
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 400px;
+}
+
+.poster {
+    width: 100%;
+    height: 250px;
+    background-color: gray;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.details {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.details h1 {
+    font-size: 1.5em;
+}
+
+.details p {
+    margin-left: 2px;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.time .divider {
+    font-size: 2em;
+    font-weight: 100;
+}
+
+.details button {
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 30px;
+    background-color: rgb(57, 47, 137);
+    color: white;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.details button a {
+    color: white;
+}
+
+.details .content {}
+
+.details .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.barcode {
+    width: 35px;
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#card-container .event-cards .title,
+#card-container .lecture-cards .title,
+#card-container .workshop-cards .title {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 2em;
+    font-weight: 600;
+    color: #3A3089;
+}
+
+
+.event-cards,
+.lecture-cards,
+.workshop-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 100px 0;
+    padding: 0 50px;
+}
+
+.navbar {
+    background-color: #ffffff;
+}
+
+.navbar .site-menu ul li a{
+    color: black;
+}
+
+.navbar-button span{
+    color: black;
+}
+.image-black {
+    filter: invert(1) brightness(0);
+  }
+.event-nav{
+    position: fixed;
+}
+@media (width < 500px) {
+    .details .buttons {
+        flex-direction: column;
+    }
+
+    .details button {
+        width: 100%;
+    }
+
+    .time {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        align-items: start;
+    }
+
+    .time .divider {
+        display: none;
+    }
+}
+
+@media (width<768px){
+    .button-text-book{
+        color:black;
+    }
+}
