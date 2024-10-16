@@ -56,7 +56,7 @@
         <meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Events</title>
+        <title>Schedule</title>
 
         <link rel="stylesheet" href="/css/fontawesome.min.css">
         <link rel="stylesheet" href="/css/swiper.min.css">
@@ -134,7 +134,8 @@
                                 <!-- <li><a href="/#campus-ambassador">Campus
                                         Ambassador</a></li> -->
                                 <li><a href="/schedule/">Schedule</a></li>
-                                        <!-- <li><a href="/#live-calls">Live Calls</a></li> -->
+
+                                <!-- <li><a href="/#live-calls">Live Calls</a></li> -->
                                 <li><a href="/#contact-link">Contact</a></li>
                             </ul>
                         </div>
@@ -205,9 +206,19 @@
                 </nav>
                 <!-- end navbar -->
             </div>
+            <div data-agenda="iedcsummit-2024"
+                data-style
+                data-base
+                data-border="border-blue-600"
+                data-bg="bg-blue-600"
+                data-select="bg-blue-600 text-white border-blue-600"
+                data-text="text-blue-800"
+                data-round="border-blue-600"
+                data-color-1="text-blue-500"
+                data-color-2="text-blue-700"
+                style="margin-top: 100px"></div>
 
-            <div id="card-container" class="card-container">
-                <!-- Cards will be inserted here dynamically -->
+            <!-- <div id="card-container" class="card-container">
                 <div class="event-cards">
                     <h1 class="title"> Events </h1>
                 </div>
@@ -219,7 +230,7 @@
                 <div class="lecture-cards">
                     <h1 class="title"> Lectures </h1>
                 </div>
-            </div>
+            </div> -->
 
             <footer class="footer" id="contact-link">
                 <div class="container">
@@ -409,6 +420,10 @@
                     <script src="/js/locomotive-scroll.min.js"></script>
                     <script src="/js/ScrollTrigger.min.js"></script>
                     <script src="script.js"></script>
+                    <script
+                        src="https://events.startupmission.in/api/script/agenda"
+                        type="module"></script>
+
                 </body>
 
             </html>

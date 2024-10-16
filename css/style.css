@@ -5299,6 +5299,11 @@ only screen and (max-device-width: 767px) {
 @media (max-width: 500px) {
   .custom-button_1{
     width:90vw;
+    color: #000;
+  }
+  .custom-button_1 .button-text{
+    width:90vw;
+    color: #000;
   }
   .custom-button_2{
     width:90vw;
@@ -5347,4 +5352,10 @@ only screen and (max-device-width: 767px) {
 
 .guide h1 a i{
   cursor: pointer;
+}
+
+@media (width<768px){
+  .button-text-book{
+      color:black;
+  }
 }
